@@ -1,0 +1,16 @@
+
+
+# Vue.js 相關
+dist/
+coverage/
+.env
+.env.*.local
+
+# 開發工具設定
+.vscode/
+.idea/
+*.iml
+
+# 系統產生的檔案
+.DS_Store
+Thumbs.db
