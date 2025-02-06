@@ -1,5 +1,4 @@
 
-
 # Vue.js 相關
 dist/
 coverage/
@@ -14,3 +13,4 @@ coverage/
 # 系統產生的檔案
 .DS_Store
 Thumbs.db
+node_modules
