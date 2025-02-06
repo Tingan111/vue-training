@@ -1,6 +1,7 @@
 <script setup>
 //當你使用 ref 時，它會回傳一個 帶有 .value 屬性的物件，這個 .value 存放的是你想要的數據。
 import {ref,computed} from "vue";
+import CountdownTimer from "./components/CountdownTimer.vue";
 const currenTime =ref(new Date().toLocaleTimeString());
 setInterval(()=>{
   currenTime.value=new Date().toLocaleTimeString();
@@ -20,6 +21,9 @@ const resetNumber=(()=>{number.value=0})
 //v-model="number"：讓 <input> 與 number 變數雙向綁定，輸入變數會自動更新。
 //computed()：自動計算 number 的平方和立方，當 number 改變時，Vue 會自動更新這些值。
 
+const onTimerFinsh=()=>{
+  alert("時間到！")
+}
 </script>
 
 <template>
@@ -30,6 +34,7 @@ const resetNumber=(()=>{number.value=0})
 <p>平方：{{aa}}</p>
 <p>三次方：{{bb}}</p>
 <button @click="resetNumber">重置</button>
+<CountdownTimer :seconds="10" @finished="onTimerFinsh"/>
 </div>
 </template>
 
