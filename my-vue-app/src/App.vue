@@ -2,6 +2,8 @@
 //當你使用 ref 時，它會回傳一個 帶有 .value 屬性的物件，這個 .value 存放的是你想要的數據。
 import {ref,computed} from "vue";
 import CountdownTimer from "./components/CountdownTimer.vue";
+import router from "./router";
+
 const currenTime =ref(new Date().toLocaleTimeString());
 setInterval(()=>{
   currenTime.value=new Date().toLocaleTimeString();
@@ -27,12 +29,13 @@ const onTimerFinsh=()=>{
 </script>
 
 <template>
+<router-view />
 <h1>現在時間{{currenTime}}</h1>
 <div>
 <input type="number" v-model="number" />
 
-<p>平方：{{aa}}</p>
-<p>三次方：{{bb}}</p>
+<p>平方：{{square}}</p>
+<p>三次方：{{cube}}</p>
 <button @click="resetNumber">重置</button>
 <CountdownTimer :seconds="10" @finished="onTimerFinsh"/>
 </div>

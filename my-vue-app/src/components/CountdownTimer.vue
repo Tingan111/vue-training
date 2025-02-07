@@ -1,26 +1,24 @@
 <script setup>
-import {ref ,onMounted,onUnmounted } from "vue";
-const props=defineProps({ seconds:Number });
-
+import {ref,onMounted,onUnmounted} from "vue";
+const props=defineProps({seconds:Number})
 const emit=defineEmits(["finished"])
-
-const timeLeft= ref(props.seconds);
-
+const timeLeft=ref(props.seconds)
 let timer=null;
 onMounted(()=>{
-    timer=setInterval(()=>{
-        if(timeLeft.value>0){
+    timer =setInterval(()=>{
+      if(timeLeft.value>0){
         timeLeft.value--;
-        }else{
-        clearInterval(timer);
-        emit("finished");
+        } else{
+          clearInterval(timer);
+          emit("finished");
         }
-    },1000);
+    },1000);    
 })
 
 onUnmounted(()=>{
     clearInterval(timer)
 })
+
 </script>
 <template>
     <div>
