@@ -9,3 +9,5 @@ npm run dev
 倒數計時器
 
 會員登入登出
+
+v-for練習
