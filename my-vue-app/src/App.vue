@@ -3,7 +3,8 @@
 import {ref,computed} from "vue";
 import CountdownTimer from "./components/CountdownTimer.vue";
 import router from "./router";
-
+import VforLoop from"./components/ＶforLoop.vue"
+import VonClick from "./components/VonClick.vue";
 const currenTime =ref(new Date().toLocaleTimeString());
 setInterval(()=>{
   currenTime.value=new Date().toLocaleTimeString();
@@ -24,7 +25,6 @@ const resetNumber=(()=>{number.value=0})
 //computed()：自動計算 number 的平方和立方，當 number 改變時，Vue 會自動更新這些值。
 
 const onTimerFinsh=()=>{
-  alert("時間到！")
 }
 </script>
 
@@ -38,6 +38,8 @@ const onTimerFinsh=()=>{
 <p>三次方：{{cube}}</p>
 <button @click="resetNumber">重置</button>
 <CountdownTimer :seconds="10" @finished="onTimerFinsh"/>
+<VforLoop />
+<VonClick/>
 </div>
 </template>
 
